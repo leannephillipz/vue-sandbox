@@ -1,18 +1,34 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <p>Homepage</p>
+    <div>Test: {{ filters.uppercase(name) }}</div>
+    <test msg="message goes here"/>
+    <editinput value="xxx"/>
   </div>
+  <div v-on:click="$globalHelper">Click me (global helper)</div>
 </template>
 
 <script>
+import { ref } from 'vue'
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import test from '@/components/test.vue'
+import editinput from '@/components/clickeditinput.vue'
+import filters from "@/filters"
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
-  }
+    test,
+    editinput
+  },
+  setup() {
+    let name = ref("Leanne");
+    let price = ref(123);
+    return {
+     name,
+     filters,
+     price
+   }
+ }
 }
 </script>
