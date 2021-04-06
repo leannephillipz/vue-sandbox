@@ -20,11 +20,11 @@ app.use(router).use(myPlugin).mount('#app')
 // }
 
 
-app.config.globalProperties.$filtering = () => {
-  currencyUSD(value) {
-    return '$' + value
-  }
-}
+// app.config.globalProperties.$filtering = () => {
+//   currencyUSD(value){
+//     return '$' + value
+//   }
+// }
 
 app.config.globalProperties.gblData = 'something'
 app.component('a-child-component', {
