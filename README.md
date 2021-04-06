@@ -1,4 +1,4 @@
-# vue-sandbox
+# assessment
 
 ## Project setup
 ```
