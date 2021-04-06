@@ -7,11 +7,9 @@ import global from "@/global";
 
 // createApp(App).use(router).mount('#app')
 
-const app = createApp(App)
-.use(router)
-.use(vPlugin)
-.use(myPlugin)
-.mount('#app')
+const app = createApp(App, {})
+
+app.use(router).use(myPlugin).mount('#app')
 
 
 // const app = createApp({
@@ -22,12 +20,18 @@ const app = createApp(App)
 // }
 
 
-// app.config.globalProperties.$filtering = () => {
-//   currencyUSD(value) {
-//     return '$' + value
-//   }
-// }
+app.config.globalProperties.$filtering = () => {
+  currencyUSD(value) {
+    return '$' + value
+  }
+}
 
+app.config.globalProperties.gblData = 'something'
+app.component('a-child-component', {
+  mounted() {
+    console.log("hello" + this.gblData) // 'something'
+  }
+})
 
 
 

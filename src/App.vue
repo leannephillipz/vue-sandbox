@@ -4,6 +4,7 @@
     <router-link to="/about">About</router-link> |
     <router-link to="/todos">Todos</router-link> |
     <router-link to="/todos0">Todos0</router-link>
+      <a-child-component/>
   </div>
   <router-view/>
 </template>
